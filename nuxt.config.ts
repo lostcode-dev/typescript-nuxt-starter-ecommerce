@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@nuxtjs/supabase',
     '@unlok-co/nuxt-stripe',
+    '@nuxtjs/i18n',
   ],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
@@ -25,12 +26,14 @@ export default defineNuxtConfig({
   stripe: {
     server: {
       key: process.env.STRIPE_SECRET_KEY,
-      options: {
-      },
+      options: {},
     },
     client: {
       key: process.env.STRIPE_PUBLIC_KEY,
       options: {},
     },
+  },
+  i18n: {
+    vueI18n: './i18n.config.ts',
   },
 });
