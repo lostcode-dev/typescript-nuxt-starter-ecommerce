@@ -9,6 +9,8 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/robots',
     '@nuxtjs/sitemap',
+    '@nuxtjs/prismic',
+    '@zadigetvoltaire/nuxt-gtm',
   ],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
@@ -38,6 +40,9 @@ export default defineNuxtConfig({
   i18n: {
     vueI18n: './i18n.config.ts',
   },
+  prismic: {
+    endpoint: process.env.PRISMIC_PROJECT_URL,
+  },
   site: {
     url: process.env.APP_URL,
     name: process.env.APP_NAME,
@@ -46,5 +51,14 @@ export default defineNuxtConfig({
     allow: '/',
     disallow: ['/admin'],
     sitemap: `${process.env.APP_URL}/sitemap.xml`,
+  },
+  gtm: {
+    id: process.env.GOOGLE_TAG_MANAGER_ID ?? '',
+    enableRouterSync: true,
+    queryParams: {
+      gtm_auth: 'init',
+      gtm_cookies_win: 'init',
+      gtm_preview: 'init',
+    },
   },
 });
