@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/nuxt',
     '@nuxtjs/supabase',
+    '@unlok-co/nuxt-stripe',
   ],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
@@ -20,5 +21,16 @@ export default defineNuxtConfig({
   supabase: {
     url: process.env.SUPABASE_PROJECT_URL,
     key: process.env.SUPABASE_API_KEY,
+  },
+  stripe: {
+    server: {
+      key: process.env.STRIPE_SECRET_KEY,
+      options: {
+      },
+    },
+    client: {
+      key: process.env.STRIPE_PUBLIC_KEY,
+      options: {},
+    },
   },
 });

@@ -32,6 +32,7 @@
   },
   "dependencies": {
     "@nuxtjs/supabase": "1.4.5",
+    "@unlok-co/nuxt-stripe": "4.0.1",
     "@vueuse/core": "^12.2.0",
     "@vueuse/nuxt": "^12.2.0",
     "nuxt": "^3.14.1592",
@@ -45,6 +46,7 @@
     "@nuxt/eslint": "^0.7.4",
     "@nuxtjs/tailwindcss": "^6.12.2",
     "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "0.5.9",
     "eslint": "^9.17.0",
     "husky": "^9.1.7",
