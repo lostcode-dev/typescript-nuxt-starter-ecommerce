@@ -16,7 +16,10 @@
     "check-branch-name": "bash ./.husky/validate_current_branch.sh",
     "format": "prettier . --write",
     "format:check": "prettier . --check",
-    "format:ci": "prettier --list-different ."
+    "format:ci": "prettier --list-different .",
+    "story:dev": "histoire dev",
+    "story:build": "histoire build",
+    "story:preview": "histoire preview"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,vue}": [
@@ -32,6 +35,8 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "9.1.1",
+    "@nuxtjs/robots": "5.1.0",
+    "@nuxtjs/sitemap": "7.0.1",
     "@nuxtjs/supabase": "1.4.5",
     "@unlok-co/nuxt-stripe": "4.0.1",
     "@vueuse/core": "^12.2.0",
@@ -43,6 +48,8 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
+    "@histoire/plugin-nuxt": "^0.17.17",
+    "@histoire/plugin-vue": "^0.17.17",
     "@ianvs/prettier-plugin-sort-imports": "4.4.0",
     "@nuxt/eslint": "^0.7.4",
     "@nuxtjs/tailwindcss": "^6.12.2",
@@ -50,6 +57,7 @@
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "0.5.9",
     "eslint": "^9.17.0",
+    "histoire": "^0.17.17",
     "husky": "^9.1.7",
     "lint-staged": "^15.2.11",
     "prettier": "3.4.2",

@@ -7,6 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     '@unlok-co/nuxt-stripe',
     '@nuxtjs/i18n',
+    '@nuxtjs/robots',
+    '@nuxtjs/sitemap',
   ],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
@@ -35,5 +37,14 @@ export default defineNuxtConfig({
   },
   i18n: {
     vueI18n: './i18n.config.ts',
+  },
+  site: {
+    url: process.env.APP_URL,
+    name: process.env.APP_NAME,
+  },
+  robots: {
+    allow: '/',
+    disallow: ['/admin'],
+    sitemap: `${process.env.APP_URL}/sitemap.xml`,
   },
 });

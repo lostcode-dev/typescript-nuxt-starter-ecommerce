@@ -21,12 +21,12 @@ type UseAuthReturnType = {
 export default function useAuth(): UseAuthReturnType {
   const client = useSupabaseClient();
 
-  const name = ref<string>("");
-  const email = ref<string>("");
-  const password = ref<string>("");
+  const name = ref<string>('');
+  const email = ref<string>('');
+  const password = ref<string>('');
 
-  const successMessage = ref<string>("");
-  const errorMessage = ref<string>("");
+  const successMessage = ref<string>('');
+  const errorMessage = ref<string>('');
 
   async function signUp() {
     try {
@@ -37,7 +37,7 @@ export default function useAuth(): UseAuthReturnType {
       });
       if (error) throw error;
 
-      successMessage.value = "Verifique seu e-mail para confirmação";
+      successMessage.value = 'Verifique seu e-mail para confirmação';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao registrar: ${error.message}`;
@@ -53,7 +53,7 @@ export default function useAuth(): UseAuthReturnType {
       });
       if (error) throw error;
 
-      successMessage.value = "Login realizado com sucesso";
+      successMessage.value = 'Login realizado com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao fazer login: ${error.message}`;
@@ -66,7 +66,7 @@ export default function useAuth(): UseAuthReturnType {
       const { error } = await client.auth.signOut();
       if (error) throw error;
 
-      successMessage.value = "Logout realizado com sucesso";
+      successMessage.value = 'Logout realizado com sucesso';
     } catch (error: any) {
       errorMessage.value = `Erro ao fazer logout: ${error.message}`;
     }
@@ -79,7 +79,7 @@ export default function useAuth(): UseAuthReturnType {
       });
       if (error) throw error;
 
-      successMessage.value = "Senha atualizada com sucesso";
+      successMessage.value = 'Senha atualizada com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao atualizar a senha: ${error.message}`;
@@ -94,7 +94,7 @@ export default function useAuth(): UseAuthReturnType {
       });
       if (error) throw error;
 
-      successMessage.value = "Email atualizado com sucesso";
+      successMessage.value = 'Email atualizado com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao atualizar o email: ${error.message}`;
@@ -105,11 +105,11 @@ export default function useAuth(): UseAuthReturnType {
   async function resetPasswordForEmail(email: string) {
     try {
       const { data, error } = await client.auth.resetPasswordForEmail(email, {
-        redirectTo: "https://example.com/update-password",
+        redirectTo: 'https://example.com/update-password',
       });
       if (error) throw error;
 
-      successMessage.value = "E-mail de redefinição de senha enviado";
+      successMessage.value = 'E-mail de redefinição de senha enviado';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao redefinir a senha: ${error.message}`;
@@ -121,7 +121,7 @@ export default function useAuth(): UseAuthReturnType {
     try {
       const { data, error } = await client.auth.getSession();
       if (error) throw error;
-      successMessage.value = "Sessão recuperada com sucesso";
+      successMessage.value = 'Sessão recuperada com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao obter a sessão: ${error.message}`;
@@ -133,7 +133,7 @@ export default function useAuth(): UseAuthReturnType {
     try {
       const { data, error } = await client.auth.refreshSession();
       if (error) throw error;
-      successMessage.value = "Sessão atualizada com sucesso";
+      successMessage.value = 'Sessão atualizada com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao atualizar a sessão: ${error.message}`;
@@ -145,7 +145,7 @@ export default function useAuth(): UseAuthReturnType {
     try {
       const { data, error } = await client.auth.admin.deleteUser(id);
       if (error) throw error;
-      successMessage.value = "Usuário deletado com sucesso";
+      successMessage.value = 'Usuário deletado com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao deletar usuário: ${error.message}`;
@@ -161,7 +161,7 @@ export default function useAuth(): UseAuthReturnType {
       } = await client.auth.getUser();
       if (error) throw error;
 
-      successMessage.value = "Usuário recuperado com sucesso";
+      successMessage.value = 'Usuário recuperado com sucesso';
       return user;
     } catch (error: any) {
       errorMessage.value = `Erro ao obter usuário: ${error.message}`;
@@ -171,12 +171,9 @@ export default function useAuth(): UseAuthReturnType {
 
   async function inviteUserByEmail(email: string, options = {}) {
     try {
-      const { data, error } = await client.auth.admin.inviteUserByEmail(
-        email,
-        options
-      );
+      const { data, error } = await client.auth.admin.inviteUserByEmail(email, options);
       if (error) throw error;
-      successMessage.value = "Usuário convidado com sucesso";
+      successMessage.value = 'Usuário convidado com sucesso';
       return data;
     } catch (error: any) {
       errorMessage.value = `Erro ao convidar usuário: ${error.message}`;
@@ -185,7 +182,7 @@ export default function useAuth(): UseAuthReturnType {
   }
 
   const user = computed(() => {
-    let supabaseUser = useSupabaseUser()
+    let supabaseUser = useSupabaseUser();
     return supabaseUser.value;
   });
 
@@ -194,7 +191,7 @@ export default function useAuth(): UseAuthReturnType {
   });
 
   function redirectIfAuthenticated() {
-    if (isAuthenticated.value) navigateTo("/app");
+    if (isAuthenticated.value) navigateTo('/app');
   }
 
   return {
@@ -214,6 +211,6 @@ export default function useAuth(): UseAuthReturnType {
     deleteUser,
     inviteUserByEmail,
     redirectIfAuthenticated,
-    updateEmail
+    updateEmail,
   };
 }
