@@ -33,6 +33,20 @@
 - 🚫 lint-staged — Run ESLint and Prettier against staged Git files
 - 👷 PR Workflow — Run Type Check & Linters on Pull Requests
 - ⚙️ EditorConfig - Consistent coding styles across editors and IDEs
+- 🔗 Supabase - Provides a backend-as-a-service with real-time databases and authentication.
+- 💳 Stripe - Enables secure and flexible payment integration.
+- 🔐 Authentication - User authentication with options for social login, email/password, and more.
+- 🛠️ BackOffice - An admin panel for managing products, orders, and customers.
+- 🌍 i18n - Multilingual support for reaching global audiences.
+- 🖼️ histoire - A visual storybook for building and testing Vue components interactively.
+- 🤖 robots - Manage `robots.txt` to control search engine crawling.
+- 🌐 sitemap - Automatically generate XML sitemaps for better indexing by search engines.
+- 🔍 seo-meta - Simplifies the management of meta tags for products, categories, and pages.
+- 📊 Google Analytics - Track user interactions and gain insights into site performance.
+- 🔥 Hotjar - Heatmaps and session recordings to understand user behavior.
+- 🛠️ Sentry - Real-time error tracking and performance monitoring.
+- 📝 Prismic - A headless CMS for managing dynamic content, like product descriptions and blogs.
+- 🔔 OneSignal - Push notification service for engaging users with real-time updates and offers.
 
 ### Development
 
