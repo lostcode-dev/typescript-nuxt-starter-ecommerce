@@ -11,6 +11,9 @@ importers:
       '@nuxt/image':
         specifier: 1.8.1
         version: 1.8.1(db0@0.2.1)(ioredis@5.4.2)(magicast@0.3.5)(rollup@4.29.1)
+      '@splidejs/vue-splide':
+        specifier: ^0.6.12
+        version: 0.6.12
       '@vueuse/core':
         specifier: ^12.2.0
         version: 12.2.0(typescript@5.7.2)
@@ -1344,6 +1347,12 @@ packages:
   '@slicemachine/plugin-kit@0.4.61':
     resolution: {integrity: sha512-4SqfKGHW1JXMynm04d3I4wTBWqjpfFE8SdD6wg474SqjquXzeEFTUgLNZMhrfNZJGp0YjrOhcUd2wuWisgj6zQ==}
     engines: {node: '>=14.15.0'}
+
+  '@splidejs/splide@4.1.4':
+    resolution: {integrity: sha512-5I30evTJcAJQXt6vJ26g2xEkG+l1nXcpEw4xpKh0/FWQ8ozmAeTbtniVtVmz2sH1Es3vgfC4SS8B2X4o5JMptA==}
+
+  '@splidejs/vue-splide@0.6.12':
+    resolution: {integrity: sha512-eQb8pnGMN8Tr0FVaQo1PUMZlMHl8fSqHNXPTx79eeE2dkZqbsvq6jRzXoT9ZF7hFkxdOEmB6qYNp93SUwV684g==}
 
   '@stylistic/eslint-plugin@2.12.1':
     resolution: {integrity: sha512-fubZKIHSPuo07FgRTn6S4Nl0uXPRPYVNpyZzIDGfp7Fny6JjNus6kReLD7NI380JXi4HtUTSOZ34LBuNPO1XLQ==}
@@ -6990,6 +6999,12 @@ snapshots:
       prismic-ts-codegen: 0.1.23(@prismicio/client@7.13.1)
     transitivePeerDependencies:
       - '@prismicio/types'
+
+  '@splidejs/splide@4.1.4': {}
+
+  '@splidejs/vue-splide@0.6.12':
+    dependencies:
+      '@splidejs/splide': 4.1.4
 
   '@stylistic/eslint-plugin@2.12.1(eslint@9.17.0(jiti@2.4.2))(typescript@5.7.2)':
     dependencies:

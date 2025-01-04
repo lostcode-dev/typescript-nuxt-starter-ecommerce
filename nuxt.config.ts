@@ -4,6 +4,7 @@ export default defineNuxtConfig({
     pages: 'app/pages',
     layouts: 'app/layouts',
     middleware: 'app/middleware',
+    plugins: 'app/plugins',
   },
 
   modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/prismic', '@nuxt/image'],

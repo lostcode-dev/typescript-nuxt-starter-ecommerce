@@ -7,15 +7,15 @@ defineProps<{ data: TheBanner }>();
 <template>
   <div class="w-full h-[500px] relative justify-center items-center">
     <div
-      class="w-full h-full flex items-center bg-black bg-opacity-50 text-white max-w-7xl mx-auto relative z-10"
+      class="w-full h-full flex items-center bg-black bg-opacity-50 text-white max-w-7xl mx-auto relative z-10 px-10"
       :class="{
-        'justify-left': data.align === 'left',
+        'justify-start': data.align === 'left',
         'justify-center ': data.align === 'center',
-        'justify-right': data.align === 'right',
+        'justify-end': data.align === 'right',
       }"
     >
       <div
-        class="px-6 max-w-lg"
+        class="px-8 max-w-lg"
         :class="{
           'text-left': data.align === 'left',
           'text-center ': data.align === 'center',
