@@ -54,13 +54,13 @@ const toggleMenu = () => {
     <!-- Mobile menu -->
     <div class="lg:hidden overflow-hidden" role="dialog" aria-modal="true">
       <Transition name="opacity">
-        <div v-show="isMenuOpen" class="fixed inset-0 z-10 bg-gray-500 opacity-40"></div>
+        <div v-show="isMenuOpen" class="fixed inset-0 z-50 bg-gray-500 opacity-40"></div>
       </Transition>
 
       <Transition name="slide">
         <div
           v-show="isMenuOpen"
-          class="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white-50 shadow-xl"
+          class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 bg-white-50 shadow-xl"
         >
           <div class="flex items-center justify-between">
             <TheBrand :data="data" />

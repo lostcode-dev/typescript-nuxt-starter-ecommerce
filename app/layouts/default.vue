@@ -1,72 +1,31 @@
+<script setup lang="ts">
+import type { TheHeader } from '~/components/TheHeader/types';
+
+const UID_HEADER = 'header';
+const { client } = usePrismic();
+const { data: header } = await useAsyncData(UID_HEADER, () => client.getSingle(UID_HEADER));
+
+const normalizedHeader = computed(() => {
+  const value = header.value?.data as TheHeader;
+  if (!!value) {
+    return {
+      ...value,
+      links: value.links.map((item) => {
+        const sublinks = (item.sublinks as unknown as { text: string }[])?.[0]?.text;
+        return {
+          ...item,
+          sublinks: !!sublinks ? JSON.parse(sublinks) : [],
+        };
+      }),
+    };
+  }
+  return {} as TheHeader;
+});
+</script>
+
 <template>
   <div>
-    <TheHeader
-      :data="{
-        company_name: 'Your Company',
-        company_brand: 'https://tailwindui.com/plus/img/logos/mark.svg?color=indigo&shade=600',
-        links: [
-          {
-            emoji: '🛍️',
-            label: 'Comprar',
-            path: null,
-            sublinks: [
-              {
-                emoji: '🍽️',
-                title: 'refeições prontas',
-                subtitle: 'Praticidade e sabor em cada prato.',
-                path: '/refeicoes-prontas',
-                target: '_self',
-              },
-              {
-                emoji: '📦',
-                title: 'packs e combos',
-                subtitle: 'Pacotes econômicos para todas as ocasiões.',
-                path: '/packs-e-combos',
-                target: '_self',
-              },
-              {
-                emoji: '🥂',
-                title: 'doses duplas',
-                subtitle: 'Promoções em dobro para curtir mais.',
-                path: '/doses-duplas',
-                target: '_self',
-              },
-              {
-                emoji: '🛒',
-                title: 'ver todos produtos',
-                subtitle: 'Confira nossa linha completa.',
-                path: '/todos-produtos',
-                target: '_self',
-              },
-            ],
-          },
-          {
-            emoji: '✈️',
-            label: 'Envios Nacionais',
-            path: '/refeicoes-prontas',
-            target: '_self',
-          },
-          {
-            emoji: '🏢',
-            label: 'Sobre Nós',
-            path: '/refeicoes-prontas',
-            target: '_self',
-          },
-          {
-            emoji: '❓',
-            label: 'Faqs',
-            path: '/refeicoes-prontas',
-            target: '_self',
-          },
-          {
-            emoji: '🎁',
-            label: 'Resgatar Pontos',
-            path: '/refeicoes-prontas',
-            target: '_self',
-          },
-        ],
-      }"
-    />
+    <TheHeader :data="normalizedHeader" />
     <slot></slot>
   </div>
 </template>

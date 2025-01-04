@@ -5,16 +5,23 @@ export default defineNuxtConfig({
     layouts: 'app/layouts',
     middleware: 'app/middleware',
   },
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@vueuse/nuxt'],
+
+  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/prismic', '@nuxt/image'],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
+
   typescript: {
     typeCheck: true,
   },
+
   eslint: {
     checker: true,
     config: {
       stylistic: false,
     },
+  },
+
+  prismic: {
+    endpoint: process.env.PRISMIC_PROJECT_URL,
   },
 });
