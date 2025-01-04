@@ -1,0 +1,58 @@
+{
+  "format": "custom",
+  "id": "link",
+  "json": {
+    "Main": {
+      "uid": {
+        "type": "UID",
+        "config": {
+          "label": "UID"
+        }
+      },
+      "emoji": {
+        "type": "Text",
+        "config": {
+          "label": "Emoji",
+          "placeholder": "🛒"
+        }
+      },
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "Título",
+          "placeholder": "Comprar"
+        }
+      },
+      "subtitle": {
+        "type": "Text",
+        "config": {
+          "label": "Subtítulo",
+          "placeholder": "Preparadas na nossa cozinha e entregues à tua casa."
+        }
+      },
+      "path": {
+        "type": "Text",
+        "config": {
+          "label": "Caminho",
+          "placeholder": "/"
+        }
+      },
+      "target": {
+        "type": "Select",
+        "config": {
+          "label": "Onde abrir o link",
+          "placeholder": "_self",
+          "options": ["_self", "_blank"],
+          "default_value": "_self"
+        }
+      },
+      "slices": {
+        "type": "Slices",
+        "fieldset": "Slice Zone"
+      }
+    }
+  },
+  "label": "Link",
+  "repeatable": true,
+  "status": true
+}
