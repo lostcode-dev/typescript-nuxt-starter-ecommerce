@@ -19,7 +19,8 @@
     "format:ci": "prettier --list-different .",
     "story:dev": "histoire dev",
     "story:build": "histoire build",
-    "story:preview": "histoire preview"
+    "story:preview": "histoire preview",
+    "slicemachine": "start-slicemachine"
   },
   "lint-staged": {
     "./src/**/*.{ts,js,jsx,vue}": [
@@ -35,7 +36,6 @@
   },
   "dependencies": {
     "@nuxtjs/i18n": "9.1.1",
-    "@nuxtjs/prismic": "3.4.6",
     "@nuxtjs/robots": "5.1.0",
     "@nuxtjs/sitemap": "7.0.1",
     "@nuxtjs/supabase": "1.4.5",
@@ -53,7 +53,9 @@
     "@histoire/plugin-vue": "^0.17.17",
     "@ianvs/prettier-plugin-sort-imports": "4.4.0",
     "@nuxt/eslint": "^0.7.4",
+    "@nuxtjs/prismic": "3.4.6",
     "@nuxtjs/tailwindcss": "^6.12.2",
+    "@slicemachine/adapter-nuxt": "^0.3.61",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@tailwindcss/container-queries": "^0.1.1",
     "@tailwindcss/forms": "0.5.9",
@@ -64,6 +66,7 @@
     "lint-staged": "^15.2.11",
     "prettier": "3.4.2",
     "prettier-plugin-sort-json": "4.0.0",
+    "slice-machine-ui": "^2.11.1",
     "stylelint": "^16.12.0",
     "stylelint-config-clean-order": "^6.1.0",
     "stylelint-config-recommended-vue": "^1.5.0",

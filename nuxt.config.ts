@@ -1,3 +1,5 @@
+import { apiEndpoint, repositoryName } from './slicemachine.config.json';
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   modules: [
@@ -41,7 +43,7 @@ export default defineNuxtConfig({
     vueI18n: './i18n.config.ts',
   },
   prismic: {
-    endpoint: process.env.PRISMIC_PROJECT_URL,
+    endpoint: apiEndpoint || repositoryName,
   },
   site: {
     url: process.env.APP_URL,
