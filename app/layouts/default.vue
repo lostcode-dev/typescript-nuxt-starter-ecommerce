@@ -21,8 +21,6 @@ const normalizedHeader = computed(() => {
   }
   return {} as TheHeader;
 });
-
-console.log(normalizedHeader.value);
 </script>
 
 <template>

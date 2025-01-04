@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     middleware: 'app/middleware',
   },
 
-  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/prismic'],
+  modules: ['@nuxt/eslint', '@nuxtjs/tailwindcss', '@vueuse/nuxt', '@nuxtjs/prismic', '@nuxt/image'],
   devtools: { enabled: true },
   compatibilityDate: '2024-11-01',
 

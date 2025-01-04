@@ -19,7 +19,7 @@ defineProps<{ data: TheHeaderLink }>();
 </script>
 
 <template>
-  <div ref="menuRef" class="relative">
+  <div ref="menuRef" class="relative bg-gray-50">
     <button
       type="button"
       class="flex items-center gap-x-1 text-sm/6 font-semibold text-gray-900"
@@ -39,7 +39,7 @@ defineProps<{ data: TheHeaderLink }>();
     <Transition name="flyout">
       <div
         v-if="menuOpen"
-        class="absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5"
+        class="absolute -left-8 top-full z-50 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5 bg-gray-50"
       >
         <div class="px-4 py-2">
           <TheSublink v-for="sublink in data.sublinks" :key="sublink.title" :data="sublink" />
