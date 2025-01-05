@@ -54,6 +54,7 @@ defineProps<{ data: TheBanner }>();
     </div>
 
     <div class="absolute top-0 left-0 w-full h-full object-cover flex items-center justify-center">
+      <!--  @to do https://stunningui.design/components/particles-effect -->
       <NuxtImg
         class="w-full h-full object-cover max-w-screen-2xl relative"
         :src="data.image.url"

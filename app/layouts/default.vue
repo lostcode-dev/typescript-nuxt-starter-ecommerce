@@ -24,8 +24,10 @@ const normalizedHeader = computed(() => {
 </script>
 
 <template>
-  <div>
+  <div class="bg-white-50">
     <TheHeader :data="normalizedHeader" />
-    <slot></slot>
+    <div class="max-w-7xl mx-auto">
+      <slot></slot>
+    </div>
   </div>
 </template>
